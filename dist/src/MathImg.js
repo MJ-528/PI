@@ -175,7 +175,7 @@ var MathImg = /** @class */ (function () {
         }
         for (var i = 0; i < img.getHeight(); i++) {
             for (var j = 0; j < img.getWidth(); j++) {
-                if (arrImage[0][i][j]>200 && arrImage[1][i][j] < 100 && arrImage[2][i][j]<100) {
+                if (arrImage[0][i][j]>140 && arrImage[1][i][j] < 100 && arrImage[2][i][j]<100) {
                 sal[0][i][j] = 255;
                 sal[1][i][j] = 0;
                 sal[2][i][j] = 0;   
