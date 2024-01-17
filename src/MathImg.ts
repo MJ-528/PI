@@ -146,8 +146,8 @@ export class MathImg {
     }
     return sal;
   }
-   //funcion agua implementada
-   public static toagua(img: ImageType): number[][][] {
+  //funcion agua implementada
+  public static toagua(img: ImageType): number[][][] {
     //variable que guarda el arreglo 3d de la imagen de color
     var arrImage = img.getArrayImg();
     //variable donde guardamos la salida
@@ -161,6 +161,35 @@ export class MathImg {
     }
     return sal;
   }
+  //funcion resaltado rojo implementada
+  public static torrojo(img: ImageType): number[][][] {
+    //variable que guarda el arreglo 3d de la imagen de color
+    var arrImage = img.getArrayImg();
+    //variable donde guardamos la salida
+    var sal = this.initArray(img.getWidth(), img.getHeight());
+
+    var prom;
+    for (let i = 0; i < img.getHeight(); i++) {
+      for (let j = 0; j < img.getWidth(); j++) {
+        //0.299 + 0.587G + 0.114B.
+        prom = (0.299 * arrImage[0][i][j] + 0.587 * arrImage[1][i][j] + 0.114 * arrImage[2][i][j]);
+        sal[0][i][j] = prom;
+        sal[1][i][j] = prom;
+        sal[2][i][j] = prom;
+      }
+    }
+    for (let i = 0; i < img.getHeight(); i++) {
+      for (let j = 0; j < img.getWidth(); j++) {
+        if (arrImage[0][i][j]>200 && arrImage[1][i][j] < 100 && arrImage[2][i][j]<100) {
+        sal[0][i][j] = 255;
+        sal[1][i][j] = 0;
+        sal[2][i][j] = 0;  
+        }
+      }
+    }
+    return sal;
+  }
+  
   //este codigose agrego el 4 de abril de 2022
   public static toTricolor(img: ImageType): number[][][] {
     //variable que guarda el arreglo 3d de la imagen de color
