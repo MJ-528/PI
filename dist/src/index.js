@@ -63,6 +63,13 @@ function convertirAAmarillo(evt) {
 function convertirAMorado(evt) {
     var imagenSal = new ImageType(pantalla1, imgLocal.getImage());
     imagenSal.imageArray2DtoData(pantalla2, MathImg.tomorado(imagenSal));
+    
+}
+//funcion agua 
+function convertirAgua(evt) {
+    var imagenSal = new ImageType(pantalla1, imgLocal.getImage());
+    imagenSal.imageArray2DtoData(pantalla2, MathImg.toagua(imagenSal));
+    
 }
 //este codigo se agreo el 4 de abril de 2022
 function convertirTricolor(evt) {
@@ -412,6 +419,7 @@ document.getElementById("op-verde").addEventListener('click', convertirAVerde, f
 document.getElementById("op-azul").addEventListener('click', convertirAAzul, false);
 document.getElementById("op-amarillo").addEventListener('click', convertirAAmarillo, false);
 document.getElementById("op-morado").addEventListener('click', convertirAMorado, false);
+document.getElementById("op-agua").addEventListener('click', convertirAgua, false);
 document.getElementById("op-tricolor").addEventListener('click', convertirTricolor, false);
 document.getElementById("op-gamma").addEventListener('click', correccionGamma, false);
 document.getElementById("op-umbral1").addEventListener('click', umbralizado, false);
