@@ -186,6 +186,35 @@ var MathImg = /** @class */ (function () {
         }
         return sal;
     };
+    //funcion resaltar color verde
+    MathImg.torverde = function (img) {
+        //variable que guarda el arreglo 3d de la imagen de color
+        var arrImage = img.getArrayImg();
+        //variable donde guardamos la salida
+        var sal = this.initArray(img.getWidth(), img.getHeight());
+        var prom;
+        for (var i = 0; i < img.getHeight(); i++) {
+            for (var j = 0; j < img.getWidth(); j++) {
+                //0.299 + 0.587G + 0.114B.
+                prom = (0.299 * arrImage[0][i][j] + 0.587 * arrImage[1][i][j] + 0.114 * arrImage[2][i][j]);
+                sal[0][i][j] = prom;
+                sal[1][i][j] = prom;
+                sal[2][i][j] = prom;
+            }
+        }
+        for (var i = 0; i < img.getHeight(); i++) {
+            for (var j = 0; j < img.getWidth(); j++) {
+                if (arrImage[0][i][j]<100 && arrImage[1][i][j] > 50 && arrImage[2][i][j]<100) {
+                sal[0][i][j] = 0;
+                sal[1][i][j] = 200;
+                sal[2][i][j] = 0;   
+                }
+                
+                
+            }
+        }
+        return sal;
+    };
     
     //este codigose agrego el 4 de abril de 2022
     MathImg.toTricolor = function (img) {
