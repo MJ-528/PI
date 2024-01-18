@@ -246,6 +246,72 @@ export class MathImg {
     }
     return sal;
   }
+  //Funcion colores
+  public static toColores(img: ImageType): number[][][] {
+    //variable que guarda el arreglo 3d de la imagen de color
+    var arrImage = img.getArrayImg();
+    //variable donde guardamos la salida
+    var sal = this.initArray(img.getWidth(), img.getHeight());
+    let inicio = 0, termino = img.getWidth() / 6;
+    console.log(inicio, termino);
+    for (let i = 0; i < img.getHeight(); i++) {
+      for (let j = inicio; j < termino; j++) {
+        sal[0][i][j] = arrImage[0][i][j];
+        sal[1][i][j] = 0;
+        sal[2][i][j] = 0;
+      }
+    }
+    inicio = termino;
+    termino = img.getWidth() / 6;
+    termino = termino*2;
+    for (let i = 0; i < img.getHeight(); i++) {
+      for (let j = inicio; j < termino; j++) {
+        sal[0][i][j] = arrImage[0][i][j];
+        sal[1][i][j] = arrImage[1][i][j];
+        sal[2][i][j] = 0;
+      }
+    }
+    inicio = termino;
+    termino = img.getWidth() / 6;
+    termino = termino*3;
+    for (let i = 0; i < img.getHeight(); i++) {
+      for (let j = inicio; j < termino; j++) {
+        sal[0][i][j] = 0;
+        sal[1][i][j] = arrImage[1][i][j];
+        sal[2][i][j] = 0;
+      }
+    }
+    inicio = termino;
+    termino = img.getWidth() / 6;
+    termino = termino*4;
+    for (let i = 0; i < img.getHeight(); i++) {
+      for (let j = inicio; j < termino; j++) {
+        sal[0][i][j] = 0;
+        sal[1][i][j] = arrImage[1][i][j];
+        sal[2][i][j] = arrImage[2][i][j];
+      }
+    }
+    inicio = termino;
+    termino = img.getWidth() / 6;
+    termino = termino*5;
+    for (let i = 0; i < img.getHeight(); i++) {
+      for (let j = inicio; j < termino; j++) {
+        sal[0][i][j] = 0;
+        sal[1][i][j] = 0;
+        sal[2][i][j] = arrImage[2][i][j];
+      }
+    }
+    inicio = termino;
+    termino = img.getWidth();
+    for (let i = 0; i < img.getHeight(); i++) {
+      for (let j = inicio; j < termino; j++) {
+        sal[0][i][j] = arrImage[0][i][j];
+        sal[1][i][j] = 0;
+        sal[2][i][j] = arrImage[2][i][j];
+      }
+    }
+    return sal;
+  }
   
   //este codigose agrego el 4 de abril de 2022
   public static toTricolor(img: ImageType): number[][][] {
