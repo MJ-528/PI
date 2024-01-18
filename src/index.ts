@@ -352,7 +352,7 @@ function histogramas(evt: any): void{
   let histAc = MathImg.histAcum(hist);
   const miCanvas2:CanvasLocal = new CanvasLocal(graphics2, canvas2, histAc);
   miCanvas2.paint();
- 
+
 } 
 function ecualizado(evt: any): void{
   var imagenSal:ImageType = new ImageType(pantalla1, imgLocal.getImage());
@@ -416,7 +416,7 @@ function escalarImagen2(evt: any): void{
   var argss = prompt('Ingresa un factor de escala');
   var factor = parseFloat(argss);
   pantalla2.drawImage(imgLocal.getImage(), 0,0, Math.floor(imgLocal.getImage().width*factor), Math.floor(imgLocal.getImage().height*factor));
- }
+}
 
 function rotarImagen(evt: any): void{
   var argss = prompt('Ingresa un angulo de rotacion');
@@ -432,7 +432,7 @@ function rotarImagen2(evt: any): void{
   pantalla2.rotate(angulo* Math.PI / 180);
   pantalla2.translate(-Math.floor(imgLocal.getImage().width/2), -Math.floor(imgLocal.getImage().height/2));
   pantalla2.drawImage(imgLocal.getImage(), 0,0);
- }
+}
 function shearingX(evt: any): void{
   var argss = prompt('Ingresa un factor de shearing');
   var factor = parseFloat(argss);
@@ -454,7 +454,7 @@ function tAfin(evt: any): void{
 }
 
 lienzo1.addEventListener('mousemove', handleMouse);
- 
+
 lienzo1.addEventListener("mousemove", imgLocal.drawSmallImg);
 document.getElementById('files').addEventListener('change', imgLocal.handleFileSelect, false);
 document.getElementById('files2').addEventListener('change', imgLocal4.handleFileSelect, false);
