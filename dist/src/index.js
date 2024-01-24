@@ -342,7 +342,7 @@ function escalauno(evt) {
 //Mosaico 
 function mos() {
     var alto = h/6;
-    var ancho= w/7;
+    var ancho= w/6;
     ctx.clearRect(0, 0, 300, 300);
     for (let i = 0; i < 5; i++) {
         for (let j = 0; j < 7; j++) {
