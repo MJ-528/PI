@@ -351,6 +351,7 @@ function escalauno(evt: any): void {
   inimagen();
   escalaun();
 }
+//Mosaico 
 
 //codigo para efecto de particulas
 let particleArray: ParticleText[];
