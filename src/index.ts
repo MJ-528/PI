@@ -308,11 +308,9 @@ function escalacin() {
   var hRatio = 300 / w;
   var vRatio = 300 / h;
   var ratio = Math.min(hRatio, vRatio);
-  
   // Calcular el desplazamiento para centrar la imagen
   var centerShift_x = (300 - w*ratio) / 2;
   var centerShift_y = (300 - h*ratio) / 2;
-
   // Dibujar la imagen a escala en el canvas
   ctx.clearRect(0, 0, 300, 300);
   ctx.drawImage(imgLocal.getImage(), 0, 0, w, h, centerShift_x, centerShift_y, w*ratio*0.5, h*ratio*0.5);
