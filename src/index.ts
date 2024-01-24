@@ -352,7 +352,20 @@ function escalauno(evt: any): void {
   escalaun();
 }
 //Mosaico 
-
+function mos() {
+  var alto = h/6;
+  var ancho= w/7;
+  ctx.clearRect(0, 0, 300, 300);
+  for (let i = 0; i < 5; i++) {
+    for (let j = 0; j < 7; j++) {
+    ctx.drawImage(imgLocal.getImage(),i*ancho, j*alto, ancho, alto);
+    }
+  }
+}
+function mosaico(evt: any): void { 
+  inimagen();
+  mos();
+}
 //codigo para efecto de particulas
 let particleArray: ParticleText[];
 let mouse:any = {
@@ -573,6 +586,7 @@ document.getElementById("op-rain2").addEventListener('click', rain2, false);
 document.getElementById("op-esc").addEventListener('click', escalacinco, false);
 document.getElementById("op-eso").addEventListener('click', escalaocho, false);
 document.getElementById("op-esu").addEventListener('click', escalauno, false);
+document.getElementById("op-mosaico").addEventListener('click', mosaico, false);
 
 //op con texto.
 document.getElementById("op-text").addEventListener('click', textEfects, false);
